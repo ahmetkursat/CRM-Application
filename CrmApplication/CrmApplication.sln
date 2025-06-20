@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMApi", "..\CRMApi\CRMApi.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.Domain", "..\CRM.Domain\CRM.Domain.csproj", "{64E48EF1-21A6-B416-2F23-609CAFC6786D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmInfrastructure", "CrmInfrastructure\CrmInfrastructure.csproj", "{3A6566D4-7A8E-4036-B0B9-12F97CD0ADEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.Infrastructure", "CrmInfrastructure\CRM.Infrastructure.csproj", "{3A6566D4-7A8E-4036-B0B9-12F97CD0ADEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
