@@ -12,7 +12,7 @@ namespace CrmApplication.Data
 
         public class AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
+                
         }
 
 }
