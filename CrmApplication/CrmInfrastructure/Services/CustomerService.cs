@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
+using CRM.Domain.Entities;
+using CrmApplication.Data;
 using CrmApplication.DTOs;
 using CrmApplication.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +27,15 @@ namespace CRM.Infrastructure.Services
             _context = context;
         }
 
-        public Task<CustomerDto> CreateAsync(CustomerCreateDto customerCreateDto)
+        public async Task<CustomerDto> CreateAsync(CustomerCreateDto customerCreateDto)
         {
-            throw new NotImplementedException();
+            var customerEntity = _mapper.Map<Customer>(customerCreateDto);
+
+            await _context.Customers.AddAsync(customerEntity);
+
+            await _context.SaveChangesAsync();
+
+            return _mapper.Map<CustomerDto>(customerEntity);
         }
 
         public async Task<bool> DeleteAsync(Guid id) { 
@@ -61,12 +70,13 @@ namespace CRM.Infrastructure.Services
 
         public async Task<bool> UpdateAsync(CustomerUpdateDto customerUpdateDto)
         {
-            var customer = await _context.Customer.FindAsync(customerUpdateDto.Id);
+            var customer = await _context.Customers.FindAsync(customerUpdateDto.Id);
             if (customer == null)
                 return false;
 
             // DTO'dan entity'ye veri aktarımı (AutoMapper ile)
             _mapper.Map(customerUpdateDto, customer);
+
 
             await _context.SaveChangesAsync();
 
