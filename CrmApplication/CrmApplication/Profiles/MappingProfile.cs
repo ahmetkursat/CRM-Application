@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CRM.Domain.Entities;
 using CrmApplication.DTOs;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace CrmApplication.NewFolder
     {
         public MappingProfile()
         {
-            CreateMap<Customer,CustomerDto>
+            CreateMap<Customer, CustomerDto>();
+            
         }
     }
 }
