@@ -15,17 +15,16 @@ namespace CRM.Infrastructure.Services
     public class CustomerService : ICustomerService
     {
         private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
 
-        public CustomerService(IMapper mapper)
+        public CustomerService(AppDbContext context, IMapper mapper)
         {
+            _context = context;
             _mapper = mapper;
         }
 
-        public CustomerService(AppDbContext context)
-        {
-            _context = context;
-        }
+        private readonly IMapper _mapper;
+
+        
 
         public async Task<CustomerDto> CreateAsync(CustomerCreateDto customerCreateDto)
         {
