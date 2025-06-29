@@ -14,7 +14,8 @@ namespace CrmApplication.NewFolder
     {
         public MappingProfile()
         {
-            CreateMap<CustomerCreateDto,Customer>();
+            CreateMap<CustomerCreateDto, Customer>();
+            CreateMap<CustomerUpdateDto, Customer>();
             CreateMap<Customer, CustomerDto>().ReverseMap();
         }
     }
