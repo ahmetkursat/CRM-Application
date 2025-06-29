@@ -18,7 +18,7 @@ namespace CRM.Domain.Entities
         public string Address { get; set; } = string.Empty;
 
         // Navigation Property
-        public ICollection<Activity> Activities { get; set; } = new List<Activity>();
+        public ICollection<Activities> Activities { get; set; } = new List<Activities>();
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }

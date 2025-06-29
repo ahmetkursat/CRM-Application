@@ -17,6 +17,11 @@ namespace CrmApplication.NewFolder
             CreateMap<CustomerCreateDto, Customer>();
             CreateMap<CustomerUpdateDto, Customer>();
             CreateMap<Customer, CustomerDto>().ReverseMap();
+
+            CreateMap<Activities, ActivitiesDto>().ReverseMap();
+            CreateMap<ActivitiesCreateDto, Activities>();
+            CreateMap<ActivitiesUpdateDto, Activities>();
+
         }
     }
 }

@@ -16,7 +16,7 @@ namespace CrmApplication.Data
         }
 
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Activity> Activity { get; set; }
+        public DbSet<Activities> Activity { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,7 +43,7 @@ namespace CrmApplication.Data
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<Activity>(entity =>
+            modelBuilder.Entity<Activities>(entity =>
             {
                 entity.HasKey(e => e.Id);
 

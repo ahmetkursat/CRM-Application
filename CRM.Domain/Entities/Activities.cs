@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Domain.Entities
 {
-    public class Activity
+    public class Activities
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
